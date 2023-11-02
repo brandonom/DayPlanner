@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 
 function updateHourBlocks(){
-    const currenthour = now.hour();
+    const currentHour = now.hour();
 
     $(".time-block").each(function(){
         const blockHour = parseInt($(this).attr('id').split("-")[1]);

@@ -16,7 +16,7 @@ $(document).ready(function() {
         
         localStorage.setItem(hour, text);
       });
-    });
+    
 
 
 
@@ -49,4 +49,6 @@ function displayUserInput() {
   }
 
   displayUserInput();
+
+});
 

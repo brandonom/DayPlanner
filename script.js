@@ -16,7 +16,7 @@ $(document).ready(function() {
         
         localStorage.setItem(hour, text);
       });
-});
+    });
 
 
 
@@ -38,3 +38,15 @@ function updateHourBlocks(){
 
 
 updateHourBlocks();
+
+function displayUserInput() {
+    $(".time-block").each(function() {
+      const hour = $(this).attr("id");
+      const savedText = localStorage.getItem(hour);
+
+      $(this).find("textarea").val(savedText);
+    });
+  }
+
+  displayUserInput();
+

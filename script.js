@@ -20,22 +20,24 @@ $(document).ready(function() {
 
 
 
-function updateHourBlocks(){
-    const currentHour = now.hour();
-
-    $(".time-block").each(function(){
-        const blockHour = parseInt($(this).attr('id').split("-")[1]);
-
-        if (blockHour < currentHour){
-            $(this).removeClass('present future').addClass('past');
-        } else if (blockHour === currentHour) {
-            $(this).removeClass("past future").addClass("present");
+      function updateHourBlocks() {
+        const currentHour = now.hour();
+      
+        $(".time-block").each(function() {
+          const blockHour = parseInt($(this).attr('id').split("-")[1]);
+      
+          
+          $(this).removeClass('past present future');
+      
+          if (blockHour < currentHour) {
+            $(this).addClass('past');
+          } else if (blockHour === currentHour) {
+            $(this).addClass('present');
           } else {
-            $(this).removeClass("past present").addClass("future");
+            $(this).addClass('future');
           }
-    });
-}
-
+        });
+      }
 
 updateHourBlocks();
 
